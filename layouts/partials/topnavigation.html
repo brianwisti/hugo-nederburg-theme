@@ -6,10 +6,13 @@
     <div class="menu">
 
       <ul id="menu-secondary-items" class="menu-secondary-items">
+        {{- $activeCategories := .Site.Params.activeCategories -}}
         {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-          <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
-        </li>
+          {{- if in $activeCategories $name -}}
+            <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+              <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+            </li>
+          {{- end -}}
         {{ end }}
 
       </ul>
