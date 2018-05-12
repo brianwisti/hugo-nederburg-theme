@@ -25,8 +25,9 @@
     {{- end -}}
     <div class="excerpt-container">
       <div class="excerpt-meta">
-        <span class="date">{{ .Date.Format .Site.Params.DateForm }}</span>	<span> / </span>
+        <span class="date">{{ .Date.Format .Site.Params.DateForm }}</span>
           {{ if and (isset .Site.Params "author") .Site.Params.author }}
+            <span> / </span>
             <span class="author">
               {{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
                 <a href="{{ .Site.Params.authorLink | default "" | absURL }}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author  | default "" }}</a>
