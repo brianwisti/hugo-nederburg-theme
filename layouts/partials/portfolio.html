@@ -15,8 +15,6 @@
       <div class="post type-post status-publish format-standard hentry category-standard category-travel excerpt zoom full-without-featured odd excerpt">
     {{- end -}}
     {{- if $coverImage -}}
-      {{- $geometry := .Site.Params.images.thumbnail.geometry -}}
-      {{- $thumbnail := $coverImage.Fill $geometry -}}
       <a class="featured-image-link"
          href="{{ .Permalink }}"
          title="{{ .Title }}">
