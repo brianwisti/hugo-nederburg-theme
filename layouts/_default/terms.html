@@ -1,0 +1,46 @@
+{{ define "main" }}
+  {{- $data := .Data -}}
+  <div class="archive-header">
+    <h1>{{ .Title }}</h1>
+  </div>
+  <div id="loop-container" class="loop-container">
+    {{- range $key, $value := .Data.Terms.Alphabetical -}}
+      <div class="post type-post status-publish format-standard hentry category-standard category-travel excerpt zoom full-without-featured odd excerpt">
+        <div class="excerpt-container">
+          <div class="excerpt-header">
+            <h2 class="excerpt-title">
+              <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+            </h2>
+          </div>
+          <div class="excerpt-content">
+            <article>
+              {{ if eq $value.Count 1 }}
+              <p>
+                {{ $value.Count }} post
+              </p>
+              <p>
+                {{ range first 1 $value.Pages.ByDate }}
+                  {{ .Date.Format "2006/01/02" }}
+                {{ end }}
+              </p>
+              {{ else }}
+              <p>
+                {{ $value.Count }} posts
+              </p>
+              <p>
+                {{ range first 1 $value.Pages.ByDate }}
+                  {{ .Date.Format "2006/01/02" }}
+                {{ end }}
+                -  
+                {{ range last 1 $value.Pages.ByDate }}
+                {{ .Date.Format "2006/01/02" }}
+                {{ end }}
+              </p>
+              {{ end }}
+            </article>
+          </div>
+        </div>
+      </div>
+    {{- end -}}
+  </div>
+{{ end }}
