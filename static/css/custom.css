@@ -2695,6 +2695,20 @@ li.pingback:first-child {
   background: black;
 }
 
+p.cover-link {
+  text-align: center;
+  font-weight: bold;
+}
+
+figure {
+  max-width: 100%;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+}
+
 @media all and (min-width: 62.5em) {
   #bbp_topic_title {
     width: 70%;

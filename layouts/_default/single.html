@@ -8,8 +8,12 @@
     {{- $coverImage := .Resources.GetMatch "cover*" -}}
     {{- if $coverImage -}}
       <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
-      <div class='featured-image lazy lazy-bg-image' data-background="{{ $coverImage.RelPermalink | absURL }}">
-    </div>
+      <div class='featured-image lazy lazy-bg-image'
+           data-background="{{ $coverImage.RelPermalink | absURL }}">
+      </div>
+      <p class="cover-link">
+        <a href="{{ $coverImage.RelPermalink }}" target="_blank">See original image in new window</a>
+      </p>
       {{ else }}
 
       <div class="post type-post status-publish format-standard hentry category-standard category-travel entry full-without-featured odd excerpt-1">
