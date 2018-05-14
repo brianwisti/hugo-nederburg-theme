@@ -108,16 +108,10 @@
         </li>
         {{end}}
 
-				</ul>	<div class="design-credit">
-		{{ range .Site.Params.copyright }}
-		<p>{{ . | markdownify }}</p>
-		{{ else }}
-		<p>
-			Nederburg Hugo Theme by <a target="_blank" href="https://appernetic.io">Appernetic</a>.
-		</p>
-		<p>
-			A port of Tracks by Compete Themes.
-		</p>
-		{{ end }}
+        </ul>
+          <p>{{ partial "sfconservancy" . }}
+        <div class="design-credit">
+          <p>{{ partial "license" . }}
+          <p>Built with <a href="http://gohugo.io/">Hugo</a>
 	</div>
 </footer>
