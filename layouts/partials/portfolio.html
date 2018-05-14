@@ -2,8 +2,7 @@
 
 <div id="loop-container" class="loop-container">
   {{- $contentPages := (where (where .Site.Pages "Type" "in" (slice "post" "craft")) "IsPage" true) -}}
-  {{- $paginator := .Paginate $contentPages -}}
-  {{- range $index, $element := .Paginator.Pages -}}
+  {{- range $index, $element := first 5 $contentPages -}}
     {{- $coverImage := $element.Resources.GetMatch "cover*" -}}
     {{- if $coverImage -}}
       {{- if eq (mod $index 2) 0 -}}

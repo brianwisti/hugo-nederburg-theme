@@ -4,7 +4,7 @@
     <h1>{{ .Title }}</h1>
   </div>
   <div id="loop-container" class="loop-container">
-    {{- range $key, $value := .Data.Terms.Alphabetical -}}
+    {{- range $key, $value := .Data.Terms.Alphabetical.Reverse -}}
       <div class="post type-post status-publish format-standard hentry category-standard category-travel excerpt zoom full-without-featured odd excerpt">
         <div class="excerpt-container">
           <div class="excerpt-header">
