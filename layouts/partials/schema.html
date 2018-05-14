@@ -21,7 +21,8 @@
         "dateModified" : "{{ .Date }}",
         "url" : "{{ .Permalink }}",
         "wordCount" : "{{ .WordCount }}",
-        "image" : {{ printf "%s%s" .Site.BaseURL .Page.Params.image }}",
+        {{- $coverImage := .Page.Resources.GetMatch "cover*" -}}
+        {{ if $coverImage }} "image" : "{{ $coverImage.Permalink }}", {{ end }}
         "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }}"Blog" ]   
     }
     </script>
