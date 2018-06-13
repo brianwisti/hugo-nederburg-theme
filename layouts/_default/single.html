@@ -14,7 +14,8 @@
       <p class="cover-link">
         <a href="{{ $coverImage.RelPermalink }}" target="_blank">See original image in new window</a>
       </p>
-      {{ else }}
+      {{ partial "purchase-link.html" . }}
+    {{ else }}
 
       <div class="post type-post status-publish format-standard hentry category-standard category-travel entry full-without-featured odd excerpt-1">
 
