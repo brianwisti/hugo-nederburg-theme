@@ -109,7 +109,11 @@
         {{end}}
 
         </ul>
-          <p>{{ partial "sfconservancy" . }}
+
+        <p>
+          {{ partial "sfconservancy" . }}
+        <p>
+          {{ partial "designbyhumans.html" . }}
         <div class="design-credit">
           <p>{{ partial "license" . }}
           <p>Built with <a href="http://gohugo.io/">Hugo</a>
